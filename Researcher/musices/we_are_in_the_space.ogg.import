@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/we_are_in_the_space.ogg-5e2f77fb76cdb051ce519647a2834276.oggstr"
+
+[deps]
+
+source_file="res://Researcher/musices/we_are_in_the_space.ogg"
+dest_files=[ "res://.import/we_are_in_the_space.ogg-5e2f77fb76cdb051ce519647a2834276.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

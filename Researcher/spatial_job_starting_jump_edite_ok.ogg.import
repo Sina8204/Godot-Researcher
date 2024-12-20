@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spatial_job_starting_jump_edite_ok.ogg-45ced4b63667751595faa52279a01249.oggstr"
+
+[deps]
+
+source_file="res://Researcher/spatial_job_starting_jump_edite_ok.ogg"
+dest_files=[ "res://.import/spatial_job_starting_jump_edite_ok.ogg-45ced4b63667751595faa52279a01249.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

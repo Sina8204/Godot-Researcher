@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenses/spacecraft_in_cobin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://earth/Earth.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/world_in_cobin.gd" type="Script" id=3]
+
+[node name="world" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Earth" parent="." instance=ExtResource( 2 )]
+transform = Transform( 67.1126, 2.00827, -19.7956, -2.09374, 69.9687, 3.06311e-06, 19.7868, 0.592094, 67.1427, 50, -10, 100 )
+
+[node name="spacecraft_in_cobin" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.173648, 0.17101, 0.969846, 0, 0.984808, -0.173648, -0.984808, -0.0301537, -0.17101, 0, 0, -50 )
+
+[node name="hend_left" parent="spacecraft_in_cobin" index="0"]
+transform = Transform( -0.184136, -0.0361635, 0.0140262, -0.0291037, 0.173796, 0.06602, -0.0256419, 0.062433, -0.175656, -0.127102, 12.7661, 0.251968 )
+
+[node name="hand_right" parent="spacecraft_in_cobin" index="1"]
+transform = Transform( -0.0878356, -0.126418, -0.108231, -0.15353, 0.10878, -0.00246194, 0.0642192, 0.0871539, -0.153918, 0.526904, 11.313, 2.82865 )
+
+[node name="Camera" parent="spacecraft_in_cobin" index="2"]
+transform = Transform( -0.248393, 0.0383483, -0.0914521, -5.28965e-08, 0.24665, 0.103427, 0.0991669, 0.0960549, -0.229069, -0.435548, 13.0298, 0.139032 )
+
+[node name="Cube001" parent="spacecraft_in_cobin" index="4"]
+transform = Transform( -0.430857, 0.00768914, -0.172346, 0.0223995, 0.462219, -0.0353761, 0.171057, -0.0411592, -0.429471, 0.104782, 12.1006, 1.42614 )
+
+[editable path="spacecraft_in_cobin"]
