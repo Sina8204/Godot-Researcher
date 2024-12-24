@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spatial_job_starting_jump_edite_ok.ogg-df7b62ff6fb6a150c6e13f2283a76ed9.oggstr"
+
+[deps]
+
+source_file="res://scenses/Researcher/musices/spatial_job_starting_jump_edite_ok.ogg"
+dest_files=[ "res://.import/spatial_job_starting_jump_edite_ok.ogg-df7b62ff6fb6a150c6e13f2283a76ed9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

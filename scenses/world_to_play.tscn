@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://earth/Earth.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenses/spacecraft_player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenses/player_make.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/world_to_play.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Press_shift"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.423529 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "closed_door"
+
+[sub_resource type="AnimationNodeBlend3" id=3]
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "friend_com_to_cobin"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "door_open_close"
+
+[sub_resource type="AnimationNodeBlendTree" id=6]
+graph_offset = Vector2( 0, 365.25 )
+nodes/closed_door/node = SubResource( 2 )
+nodes/closed_door/position = Vector2( 80, 280 )
+nodes/door/node = SubResource( 3 )
+nodes/door/position = Vector2( 360, 380 )
+nodes/friend_in_cobin/node = SubResource( 4 )
+nodes/friend_in_cobin/position = Vector2( 60, 540 )
+nodes/opend_door/node = SubResource( 5 )
+nodes/opend_door/position = Vector2( 60, 400 )
+nodes/output/position = Vector2( 600, 220 )
+node_connections = [ "output", 0, "door", "door", 0, "closed_door", "door", 1, "opend_door", "door", 2, "friend_in_cobin" ]
+
+[node name="world" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Earth" parent="." instance=ExtResource( 1 )]
+transform = Transform( 67.1126, 2.00827, -19.7956, -2.09374, 69.9687, 3.06311e-06, 19.7868, 0.592094, 67.1427, 50, -10, 100 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.13725, 0.0710435, 0.218286, 0.015441, 0.256607, -0.0738071, -0.229036, -0.0252731, -0.135784, 1.03403, 2.36413, -49.6005 )
+speed = 1
+
+[node name="spacecraft2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.173648, 0.17101, 0.969846, 2.11415e-10, 0.984808, -0.173648, -0.984808, -0.0301537, -0.17101, 0, 0, -50 )
+
+[node name="Door_to_kabin" parent="spacecraft2" index="4"]
+transform = Transform( 0.806294, 0, 0, 0, -0.000303656, -0.806289, 0, 0.083245, -0.00294114, -0.0685024, 10.1353, 0.579476 )
+
+[node name="lable_anim" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/Press_shift = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -196.389
+margin_top = -13.7348
+margin_right = -12.389
+margin_bottom = 0.265198
+rect_scale = Vector2( 2, 2 )
+text = "press shift to sit on the chair"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../spacecraft2/AnimationPlayer")
+active = true
+parameters/door/blend_amount = 0.0
+[connection signal="body_entered" from="spacecraft2/Area_to_open_kabin_door" to="." method="_on_Area_to_open_kabin_door_body_entered"]
+[connection signal="body_exited" from="spacecraft2/Area_to_open_kabin_door" to="." method="_on_Area_to_open_kabin_door_body_exited"]
+[connection signal="body_entered" from="spacecraft2/Area_to_close_the_door" to="." method="_on_Area_to_close_the_door_body_entered"]
+
+[editable path="spacecraft2"]

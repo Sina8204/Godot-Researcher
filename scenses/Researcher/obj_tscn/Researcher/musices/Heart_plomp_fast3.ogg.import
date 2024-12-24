@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Heart_plomp_fast3.ogg-8124207bd116133bb5bc4bcfbe2ed18b.oggstr"
+
+[deps]
+
+source_file="res://scenses/Researcher/obj_tscn/Researcher/musices/Heart_plomp_fast3.ogg"
+dest_files=[ "res://.import/Heart_plomp_fast3.ogg-8124207bd116133bb5bc4bcfbe2ed18b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

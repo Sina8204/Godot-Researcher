@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Heart_pomp_fast_edit_ok.ogg-b45adfa4df491e1cad176870097a3973.oggstr"
+
+[deps]
+
+source_file="res://scenses/Researcher/musices/Heart_pomp_fast_edit_ok.ogg"
+dest_files=[ "res://.import/Heart_pomp_fast_edit_ok.ogg-b45adfa4df491e1cad176870097a3973.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Textures/shiry.png" type="Texture" id=1]
+[ext_resource path="res://obj_tscn/Earth.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sences/World.gd" type="Script" id=4]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_orientation = Basis( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07 )
+
+[node name="World" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Earth" parent="." instance=ExtResource( 2 )]
+
+[node name="KinematicBody" parent="." instance=ExtResource( 3 )]
+
+[editable path="KinematicBody"]
