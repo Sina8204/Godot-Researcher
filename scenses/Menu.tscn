@@ -2,7 +2,11 @@
 
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id=1]
+=======
+[sub_resource type="Animation" id=3]
+>>>>>>> b9a0239caefa8869b14a09168b5a25d9b24d6bcf
 resource_name = "Levels"
 length = 0.001
 tracks/0/type = "value"
@@ -30,7 +34,12 @@ tracks/1/keys = {
 "values": [ Vector2( 58, 53 ) ]
 }
 
+<<<<<<< HEAD
 [sub_resource type="Animation" id=2]
+=======
+[sub_resource type="Animation" id=1]
+resource_name = "first_menu"
+>>>>>>> b9a0239caefa8869b14a09168b5a25d9b24d6bcf
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("B1:rect_position")
@@ -57,6 +66,7 @@ tracks/1/keys = {
 "values": [ Vector2( -134, 53 ) ]
 }
 
+<<<<<<< HEAD
 [sub_resource type="AnimationNodeBlend2" id=3]
 
 [sub_resource type="AnimationNodeAnimation" id=4]
@@ -72,6 +82,23 @@ nodes/anims/position = Vector2( -20.7816, 69 )
 nodes/first_menu/node = SubResource( 4 )
 nodes/first_menu/position = Vector2( -260, 60 )
 nodes/levels/node = SubResource( 5 )
+=======
+[sub_resource type="AnimationNodeBlend2" id=4]
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "first_menu"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Levels"
+
+[sub_resource type="AnimationNodeBlendTree" id=2]
+graph_offset = Vector2( -365.782, 0 )
+nodes/anims/node = SubResource( 4 )
+nodes/anims/position = Vector2( -20.7816, 69 )
+nodes/first_menu/node = SubResource( 5 )
+nodes/first_menu/position = Vector2( -260, 60 )
+nodes/levels/node = SubResource( 6 )
+>>>>>>> b9a0239caefa8869b14a09168b5a25d9b24d6bcf
 nodes/levels/position = Vector2( -260, 200 )
 node_connections = [ "output", 0, "anims", "anims", 0, "first_menu", "anims", 1, "levels" ]
 
@@ -110,7 +137,11 @@ __meta__ = {
 [node name="B2" type="Control" parent="."]
 margin_left = -134.0
 margin_top = 53.0
+<<<<<<< HEAD
 margin_right = -7.99997
+=======
+margin_right = -7.99998
+>>>>>>> b9a0239caefa8869b14a09168b5a25d9b24d6bcf
 margin_bottom = 119.0
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -138,11 +169,19 @@ __meta__ = {
 }
 
 [node name="Anim" type="AnimationPlayer" parent="."]
+<<<<<<< HEAD
 anims/Levels = SubResource( 1 )
 anims/first_menu = SubResource( 2 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 6 )
+=======
+anims/Levels = SubResource( 3 )
+anims/first_menu = SubResource( 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 2 )
+>>>>>>> b9a0239caefa8869b14a09168b5a25d9b24d6bcf
 anim_player = NodePath("../Anim")
 active = true
 parameters/anims/blend_amount = 0.0

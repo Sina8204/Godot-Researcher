@@ -16,7 +16,11 @@ _global_script_class_icons={
 [application]
 
 config/name="Researcher2"
+<<<<<<< HEAD
 run/main_scene="res://scenses/Menu.tscn"
+=======
+run/main_scene="res://scenses/world.tscn"
+>>>>>>> b9a0239caefa8869b14a09168b5a25d9b24d6bcf
 config/icon="res://icon.png"
 
 [input]
