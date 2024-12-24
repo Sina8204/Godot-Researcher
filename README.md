@@ -1,3 +1,3 @@
 # Godot-Researcher
 
-![](./GitHub_files/Game_play.mp4)
+![](./GitHub_files/gifs/1.gif)
